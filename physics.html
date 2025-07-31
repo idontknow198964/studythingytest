@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <title>Physics Flashcards</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Physics Flashcards</h1>
+   <nav>
+  <ul>
+    <li><a href="main.html">Home</a></li>
+    <li>
+      <a href="#">Subjects ▾</a>
+      <ul class="dropdown">
+        <li><a href="algebra.html">Algebra</a></li>
+        <li><a href="geometry.html">Geometry</a></li>
+        <li><a href="physics.html">Physics</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Schedule</a></li>
+    <li><a href="#">Resources</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <main>
+    <section id="flashcards">
+      <h2>Physics Deck</h2>
+
+      <!-- Flashcard skeletons -->
+      <div class="flashcard" onclick="flipCard(this)">
+        <div class="inner">
+          <div class="front">Front placeholder</div>
+          <div class="back">Back placeholder</div>
+        </div>
+      </div>
+      <!-- More cards to come -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Marcus Huang</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
