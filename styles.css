@@ -1,125 +1,105 @@
-/* ==== Base Layout === */
-body {
+/* General Nav Styles */
+nav {
+  background: #2E7D32;
+  padding: 10px;
   font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f2f2f2;
-  color: #333;
-}
-
-header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
 }
 
 nav ul {
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 10px 0;
+  display: flex;
+  gap: 20px;
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 0 15px;
   position: relative;
 }
 
-nav a {
-  color: white;
+nav ul li a {
+  color: #fff;
+  padding: 10px 15px;
   text-decoration: none;
-  font-weight: bold;
+  display: block;
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
-/* ==== Dropdown Submenu === */
+nav ul li a:hover {
+  background: #66BB6A;
+}
+
+/* Dropdown */
 nav ul li ul.dropdown {
   display: none;
   position: absolute;
   background: #4CAF50;
-  padding: 0;
-  margin: 0;
   border-radius: 4px;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
   z-index: 1000;
 }
 
-nav ul li:hover ul.dropdown {
+nav ul li:hover > ul.dropdown {
   display: block;
 }
 
 nav ul li ul.dropdown li {
-  display: block;
-  margin: 0;
-}
-
-nav ul li ul.dropdown a {
-  color: white;
-  padding: 10px 20px;
-  display: block;
-  text-decoration: none;
-}
-
-/* ==== Main Section === */
-main {
-  padding: 20px;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-/* ==== Flashcard Skeleton === */
-#flashcards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.flashcard {
-  width: 300px;
-  height: 150px;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.flashcard .inner {
-  width: 100%;
-  height: 100%;
   position: relative;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
 }
 
-.flashcard.flip .inner {
-  transform: rotateY(180deg);
-}
-
-.flashcard .front,
-.flashcard .back {
+/* Sub-dropdown */
+nav ul li ul.sub-dropdown {
+  display: none;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  border: 2px dashed #aaa;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backface-visibility: hidden;
-  font-size: 1.1em;
+  background: #388E3C;
+  top: 0;
+  left: 100%;
+  border-radius: 4px;
+  min-width: 180px;
 }
 
-.flashcard .back {
-  transform: rotateY(180deg);
+nav ul li ul.dropdown li:hover > ul.sub-dropdown {
+  display: block;
 }
 
-/* ==== Footer === */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
+/* Link Styles */
+nav ul li ul.dropdown a,
+nav ul li ul.sub-dropdown a {
+  color: #fff;
+  padding: 10px 15px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+nav ul li ul.dropdown a:hover,
+nav ul li ul.sub-dropdown a:hover {
+  background: #81C784;
+}
+
+/* Optional: Arrow cursor for dropdowns */
+nav ul li a[href="#"]::after {
+  content: ' ▼';
+  font-size: 0.8em;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li ul.dropdown,
+  nav ul li ul.sub-dropdown {
+    position: static;
+    display: none;
+    margin-top: 5px;
+  }
+
+  nav ul li:hover > ul.dropdown,
+  nav ul li ul.dropdown li:hover > ul.sub-dropdown {
+    display: block;
+  }
 }
