@@ -1,8 +1,25 @@
-/* General Nav Styles */
+/* ==== Base Layout === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
 nav {
   background: #2E7D32;
   padding: 10px;
-  font-family: Arial, sans-serif;
 }
 
 nav ul {
@@ -11,6 +28,7 @@ nav ul {
   padding: 0;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav ul li {
@@ -18,19 +36,20 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
-  padding: 10px 15px;
+  color: white;
   text-decoration: none;
-  display: block;
+  font-weight: bold;
+  padding: 10px 15px;
   border-radius: 4px;
-  transition: background 0.3s;
+  display: block;
+  transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
   background: #66BB6A;
 }
 
-/* Dropdown */
+/* ==== Dropdown Menu === */
 nav ul li ul.dropdown {
   display: none;
   position: absolute;
@@ -50,13 +69,18 @@ nav ul li ul.dropdown li {
   position: relative;
 }
 
-/* Sub-dropdown */
+nav ul li ul.dropdown a {
+  white-space: nowrap;
+  padding: 10px 15px;
+}
+
+/* ==== Sub-Dropdown (nested) === */
 nav ul li ul.sub-dropdown {
   display: none;
   position: absolute;
-  background: #388E3C;
   top: 0;
   left: 100%;
+  background: #388E3C;
   border-radius: 4px;
   min-width: 180px;
 }
@@ -65,27 +89,72 @@ nav ul li ul.dropdown li:hover > ul.sub-dropdown {
   display: block;
 }
 
-/* Link Styles */
-nav ul li ul.dropdown a,
-nav ul li ul.sub-dropdown a {
-  color: #fff;
-  padding: 10px 15px;
-  white-space: nowrap;
-  transition: background 0.3s;
-}
-
-nav ul li ul.dropdown a:hover,
 nav ul li ul.sub-dropdown a:hover {
   background: #81C784;
 }
 
-/* Optional: Arrow cursor for dropdowns */
-nav ul li a[href="#"]::after {
-  content: ' ▼';
-  font-size: 0.8em;
+/* ==== Flashcard Section === */
+main {
+  padding: 20px;
 }
 
-/* Responsive Adjustments */
+#flashcards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.flashcard {
+  width: 300px;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flashcard.flip .inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px dashed #aaa;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  font-size: 1.1em;
+}
+
+.flashcard .back {
+  transform: rotateY(180deg);
+}
+
+/* ==== Footer === */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+/* ==== Responsive === */
 @media screen and (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -101,5 +170,14 @@ nav ul li a[href="#"]::after {
   nav ul li:hover > ul.dropdown,
   nav ul li ul.dropdown li:hover > ul.sub-dropdown {
     display: block;
+  }
+
+  #flashcards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flashcard {
+    width: 90%;
   }
 }
