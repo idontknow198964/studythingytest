@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link to the favicon -->
-   <link rel="icon" type="image/png" href="favicon.ico">
-  <title>Studythingy: Flashcard Hub</title>
-  <link rel="stylesheet" href="styles.css">
-<head>
-  <meta charset="UTF-8" />
-  <title>Studythingy Flashcards</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Studythingy: Flashcard Hub</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <header>
@@ -34,7 +29,6 @@
               <li><a href="pap.html">Potions & Poisons</a></li>
               <li><a href="cil.html">Circuit Lab</a></li>
               <li><a href="mac.html">Machines</a></li>
-              <!-- Add more Div B events -->
             </ul>
           </li>
           <li>
@@ -43,50 +37,40 @@
               <li><a href="chl.html">Chemistry Lab</a></li>
               <li><a href="cilc.html">Circuit Lab 2</a></li>
               <li><a href="macc.html">Machines</a></li>
-              <!-- Add more Div C events -->
             </ul>
           </li>
         </ul>
       </li>
-      <li>
-        <a href="#">Schedule</a>
-      </li>
-      <li>
-        <a href="#">Resources</a>
-      </li>
+      <li><a href="#">Schedule</a></li>
+      <li><a href="#">Resources</a></li>
     </ul>
   </nav>
+</header>
 
-  </header>
+<main>
+  <!-- Flashcard creation form -->
+  <section id="create-flashcard">
+    <h2>Create a Flashcard</h2>
+    <form id="flashcardForm">
+      <label for="question">Question:</label><br>
+      <input type="text" id="question" name="question" required><br><br>
+      <label for="answer">Answer:</label><br>
+      <input type="text" id="answer" name="answer" required><br><br>
+      <button type="submit">Create Flashcard</button>
+    </form>
+  </section>
 
-  <main>
-    <section id="flashcards">
-      <h2>Flashcard Decks</h2>
+  <!-- Flashcards display -->
+  <section id="flashcards">
+    <h2>Flashcard Decks</h2>
+    <!-- Existing flashcards can go here -->
+  </section>
+</main>
 
-      <!-- Flashcard skeletons -->
-      <div class="flashcard" onclick="flipCard(this)">
-        <div class="inner">
-          <div class="front">Front placeholder</div>
-          <div class="back">Back placeholder</div>
-        </div>
-      </div>
+<footer>
+  <p>© 2025 Marcus Huang</p>
+</footer>
 
-      <div class="flashcard" onclick="flipCard(this)">
-        <div class="inner">
-          <div class="front">Front placeholder</div>
-          <div class="back">Back placeholder</div>
-        </div>
-      </div>
-
-      <!-- Add more flashcards here as needed -->
-
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Marcus Huang</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
