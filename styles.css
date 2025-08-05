@@ -17,6 +17,7 @@ h1, h2 {
   margin: 0;
 }
 
+/* ==== Navigation Styles === */
 nav {
   background: #2E7D32;
   padding: 10px;
@@ -107,6 +108,50 @@ main {
   margin-top: 20px;
 }
 
+#create-flashcard {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#create-flashcard h2 {
+  margin-bottom: 15px;
+}
+
+#create-flashcard form {
+  display: flex;
+  flex-direction: column;
+}
+
+#create-flashcard label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#create-flashcard input {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#generate-flashcard-btn {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#generate-flashcard-btn:hover {
+  background-color: #45a049;
+}
+
+/* Flashcard styles */
 .flashcard {
   width: 300px;
   height: 150px;
@@ -140,6 +185,8 @@ main {
   align-items: center;
   backface-visibility: hidden;
   font-size: 1.1em;
+  overflow: auto;
+  border-radius: 8px;
 }
 
 .flashcard .back {
