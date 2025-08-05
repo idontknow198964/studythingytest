@@ -1,5 +1,5 @@
 // Replace with your actual API key
-const API_KEY = 'YOUR_API_KEY_HERE';
+const API_KEY = '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';
 
 // Event listener for form submission
 document.getElementById('flashcardForm').addEventListener('submit', async function(e) {
